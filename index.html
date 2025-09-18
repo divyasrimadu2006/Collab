@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism: Lifeguard AI Agent</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Dashboard layout */
+        .dashboard-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .info-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .status {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .status.active {
+            color: green;
+        }
+
+        .status.alerting {
+            color: red;
+            font-weight: bold;
+        }
+
+        .alert-btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .alert-btn:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tourism Lifeguard AI Agent</h1>
+        <p>Safety Monitoring System for Tourists</p>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="info-card">
+            <h3>Lifeguard Wristband Status</h3>
+            <div id="status" class="status">Safe</div>
+            <button id="alertBtn" class="alert-btn" onclick="triggerAlert()">Activate Emergency Alert</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Lifeguard AI | Powered by AI Technology</p>
+    </footer>
+
+    <script>
+        // Simulate the alerting system of the wristband
+        function triggerAlert() {
+            // Change wristband status to "Alerting"
+            document.getElementById("status").classList.remove("active");
+            document.getElementById("status").classList.add("alerting");
+            document.getElementById("status").innerText = "Alerting! Call for Help!";
+            
+            // Play a sound (simulated emergency siren)
+            let audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
+            audio.play();
+
+            // Simulate notifying nearby people (in a real scenario, this would be integrated with a network of users)
+            alert("Nearby tourists have been notified of the emergency! Help is on the way.");
+        }
+    </script>
+</body>
+</html>
